@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Subscribe service</h1>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.humidity.label }}<br>
+            {{ form.humidity(size=10) }}<br>
+            {% for error in form.humidity.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.temperature.label }}<br>
+            {{ form.temperature(size=10) }}<br>
+            {% for error in form.temperature.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.luminosity.label }}<br>
+            {{ form.luminosity(size=10) }}<br>
+            {% for error in form.luminosity.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+	<p>
+            {{ form.MAC.label }}<br>
+            {{ form.MAC }}<br>
+            {% for error in form.MAC.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}

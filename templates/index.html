@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<body class="body">
+    <h1>Hi, {{ current_user.username }}!</h1>
+	Welcome to the main page!
+    <div class = "container" align = "left">
+	<embed type = "image/svg+xml" src={{graph_data_t|safe}} style ='max-width:1000px'/>
+	<embed type = "image/svg+xml" src={{graph_data_l|safe}} style ='max-width:1000px'/>
+	<embed type = "image/svg+xml" src={{graph_data_h|safe}} style ='max-width:1000px'/>
+    </div>
+</body>
+{% endblock %}
